@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册</title>
+</head>
+<body>
+   <header>
+        <h1>用户注册</h1>
+    </header>
+
+    <main>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="2">注册须知</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>账号仅限本人使用</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>密码6-16位</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>一个手机号注册一个账号</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>注意事项</h3>
+        <ul>
+            <li>用户名不含特殊符号</li>
+            <li>邮箱需要有效</li>
+            <li>头像支持jpg、png</li>
+        </ul>
+
+        <h3>注册步骤</h3>
+        <ol>
+            <li>填写信息</li>
+            <li>选择爱好</li>
+            <li>提交注册</li>
+        </ol>
+
+        <h3>常见问题</h3>
+        <dl>
+            <dt>收不到验证码？</dt>
+            <dd>检查手机号，稍后重试</dd>
+            <dt>注册失败？</dt>
+            <dd>检查必填项是否填完</dd>
+        </dl>
+
+        <form id="regForm">
+            <p>
+                <label for="username">用户名：</label>
+                <input type="text" name="username" id="username" required>
+            </p >
+            <p>
+                <label for="pwd">密码：</label>
+                <input type="password" name="password" id="pwd" placeholder="6-16位字符" required>
+            </p >
+            <p>
+                <label for="cpwd">确认密码：</label>
+                <input type="password" name="confirmPassword" id="cpwd" required>
+            </p >
+            <p>
+                性别：
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">男</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">女</label>
+            </p >
+            <p>
+                <label for="birthday">生日：</label>
+                <input type="date" name="birthday" id="birthday">
+            </p >
+            <p>
+                <label for="email">邮箱：</label>
+                <input type="email" name="email" id="email" required>
+            </p >
+            <p>
+                <label for="phone">手机号：</label>
+                <input type="tel" name="phone" id="phone" pattern="[0-9]{11}" required>
+            </p >
+            <p>
+                爱好：
+                <input type="checkbox" name="hobby" value="reading">阅读
+                <input type="checkbox" name="hobby" value="game">游戏
+                <input type="checkbox" name="hobby" value="sport">运动
+                <input type="checkbox" name="hobby" value="music">音乐
+            </p >
+            <p>
+                <label for="avatar">头像：</label>
+                <input type="file" name="avatar" id="avatar" accept="image/*" multiple>
+            </p >
+            <p>
+                <label for="city">城市：</label>
+                <select name="city" id="city">
+                    <option value="changsha">长沙</option>
+                    <option value="changde" selected>常德</option>
+                    <option value="zhangjiajie">张家界</option>
+                </select>
+            </p >
+            <p>
+                <label for="bio">简介：</label>
+                <textarea name="bio" id="bio" rows="4" cols="50">喜欢听歌，热爱生活。</textarea>
+            </p >
+            <p>
+                <button type="submit">注册</button>
+                <button type="reset">重置</button>
+            </p >
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2026 版权所有</p >
+    </footer>
+
+    <script>
+        const form = document.getElementById("regForm");
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+            console.log("表单数据：", new FormData(form));
+            alert("提交成功，F12打开Console查看");
+        })
+    </script>
+</body>
+</html>
